@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Styles/index.css';
-import Home from './home'
+import Login from './login'
 import reportWebVitals from './reportWebVitals';
 import {createTheme, ThemeProvider} from "@mui/material";
 
@@ -21,7 +21,7 @@ let theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ThemeProvider theme={theme}>
-        <Home/>
+        <Login/>
     </ThemeProvider>
 );
 
