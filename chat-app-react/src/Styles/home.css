@@ -1,0 +1,36 @@
+body {
+    background-color: #454545;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: aliceblue;
+}
+
+.login-Main {
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #f0f8ff;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    background-color: #262626;
+}
+
+.login-Picture {
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.login-Form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.login-Logo {
+    width: 15em;
+    height: 15em;
+}
