@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './Styles/App.css';
-import {createTheme, ThemeProvider} from "@mui/material";
 import Login from "./login";
 import Home from "./home"
 import {
     BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
     Redirect,
 } from "react-router-dom";
+import Register from "./register";
 
 function App() {
 
@@ -16,14 +15,16 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Router>
-                    <Switch>
-                        <Route exact path="/" element={Login}/>
-                        <Route path="/home" element={Home}/>
-                        <Redirect to="/"/>
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<Login/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/home" element={<Home/>}/>
+                        <Route path="/register" element={<Register/>}/>
+                    </Routes>
                 </Router>
             </header>
         </div>
+
     );
 }
 

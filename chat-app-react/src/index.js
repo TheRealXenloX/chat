@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Styles/index.css';
-import Login from './login'
 import reportWebVitals from './reportWebVitals';
 import {createTheme, ThemeProvider} from "@mui/material";
+import App from "./App";
 
 let theme = createTheme({
     palette: {
@@ -12,7 +12,7 @@ let theme = createTheme({
             main: '#f0f8ff',
             contrastText: '#454545'
         },
-        text:{
+        text: {
             primary: '#DCDCDC'
         }
     }
@@ -21,7 +21,7 @@ let theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ThemeProvider theme={theme}>
-        <Login/>
+        <App/>
     </ThemeProvider>
 );
 

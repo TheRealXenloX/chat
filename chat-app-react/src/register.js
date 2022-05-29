@@ -3,22 +3,16 @@ import {TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import {useState} from "react";
 import './Styles/login.css'
-import {Link} from "react-router-dom";
 
-function Login() {
+function Register() {
 
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
-    const [loggedin, setLoggedin] = useState(false);
-    const [register, setRegister] = useState(false);
+    const [repeatpass, setRepeatPass] = useState('')
 
-    const login = () => {
-        if (username === "Jamy" && password === "yoman") {
-            setLoggedin(true)
-
-        } else {
-            alert("wrong username of password!")
-        }
+    const register = () => {
+        alert("account created")
     }
 
     const onChangePassword = (e) => {
@@ -30,6 +24,14 @@ function Login() {
         setUsername(e.target.value)
     }
 
+    const onChangeEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const onChangeRepeatPass = (e) => {
+        setRepeatPass(e.target.value)
+    }
+
     return (
         <div className="main-body">
             <div className='login-Main'>
@@ -39,11 +41,19 @@ function Login() {
                 <div className='login-Form'>
                     <form>
                         <Button variant="text"
-                              size="small"
-                              href="/register"
+                                size="small"
+                                href="/login"
                         >
-                            Register
+                            Log in
                         </Button>
+                        <TextField label="Email"
+                                   id='email'
+                                   variant="outlined"
+                                   size="small"
+                                   style={{marginTop: 8 + 'px'}}
+                                   helperText="Set username for login"
+                                   onChange={onChangeEmail}
+                        />
                         <TextField label="Username"
                                    id='username'
                                    variant="outlined"
@@ -61,8 +71,17 @@ function Login() {
                                    helperText="Set password for login"
                                    onChange={onChangePassword}
                         />
+                        <TextField label="repeat password"
+                                   id='password'
+                                   variant="outlined"
+                                   size="small"
+                                   type='password'
+                                   style={{marginTop: 8 + 'px'}}
+                                   helperText="Set password for login"
+                                   onChange={onChangeRepeatPass}
+                        />
                         <Button variant="contained" color="success" style={{marginTop: 8 + 'px'}}
-                                onClick={login}>Log in</Button>
+                                onClick={register}>Register</Button>
                     </form>
                 </div>
             </div>
@@ -70,4 +89,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Register
