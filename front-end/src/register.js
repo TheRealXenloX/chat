@@ -63,16 +63,14 @@ function Register() {
                                    id='email'
                                    variant="outlined"
                                    size="small"
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Email"
+                                   style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
                                    onChange={onChangeEmail}
                         />
                         <TextField label="Username"
                                    id='username'
                                    variant="outlined"
                                    size="small"
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Set username for login"
+                                   style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
                                    onChange={onChangeUsername}
                         />
                         <TextField label="Password"
@@ -80,8 +78,7 @@ function Register() {
                                    variant="outlined"
                                    size="small"
                                    type='password'
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Set password for login"
+                                   style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
                                    onChange={onChangePassword}
                         />
                         <TextField label="repeat password"
@@ -89,8 +86,7 @@ function Register() {
                                    variant="outlined"
                                    size="small"
                                    type='password'
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Repeat password"
+                                   style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
                                    onChange={onChangeRepeatPass}
                         />
                         <Button variant="contained" color="success" id="registerButton" style={{marginTop: 8 + 'px'}}

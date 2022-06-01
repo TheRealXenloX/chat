@@ -19,11 +19,13 @@ function Login() {
     }
 
     const onChangePassword = (e) => {
+        e.preventDefault()
         setPassword(e.target.value)
     }
 
 
     const onChangeUsername = (e) => {
+        e.preventDefault()
         setUsername(e.target.value)
     }
 
@@ -36,29 +38,28 @@ function Login() {
                 <div className='login-Form'>
                     <form>
                         <Button variant="text"
-                              size="small"
-                              href="/register"
+                                size="small"
+                                href="/register"
                         >
                             Register
                         </Button>
-                        <TextField label="Username"
-                                   id='username'
-                                   variant="outlined"
-                                   size="small"
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Set username for login"
-                                   onChange={onChangeUsername}
-                        />
-                        <TextField label="Password"
-                                   id='password'
-                                   variant="outlined"
-                                   size="small"
-                                   type='password'
-                                   style={{marginTop: 8 + 'px'}}
-                                   helperText="Set password for login"
-                                   onChange={onChangePassword}
-                        />
-                        <Button variant="contained" color="success" id="loginButton" style={{marginTop: 8 + 'px'}}
+                            <TextField label="Username"
+                                       id='username'
+                                       variant="outlined"
+                                       size="small"
+                                       style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
+                                       onChange={onChangeUsername}
+                            />
+                            <TextField label="Password"
+                                       id='password'
+                                       variant="outlined"
+                                       size="small"
+                                       type='password'
+                                       style={{marginTop: 8 + 'px', marginBottom: 8 + 'px'}}
+                                       onChange={onChangePassword}
+                            />
+                        <Button fullWidth variant="contained" color="success" id="loginButton"
+                                style={{marginTop: 8 + 'px'}}
                                 onClick={login}>Log in</Button>
                     </form>
                 </div>
