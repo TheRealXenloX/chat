@@ -1,5 +1,5 @@
 import Logo from "./images/logo512.png";
-import {TextField} from "@mui/material";
+import {Alert, Snackbar, TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import {useState} from "react";
 import './Styles/login.css'
@@ -9,11 +9,13 @@ function Register() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
-    const [repeatpass, setRepeatPass] = useState('')
+    const [repeatPass, setRepeatPass] = useState('')
+    const [passCheck, setPassCheck] = useState(false)
 
     const register = () => {
-        alert("account created")
+
     }
+
 
     const onChangePassword = (e) => {
         setPassword(e.target.value)
@@ -26,6 +28,12 @@ function Register() {
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
+    }
+
+    const onSubmitRegister = (e) => {
+        if (repeatPass !== password) {
+            setPassCheck(true)
+        }
     }
 
     const onChangeRepeatPass = (e) => {
@@ -46,6 +54,11 @@ function Register() {
                         >
                             Log in
                         </Button>
+                        <Snackbar open={passCheck} autoHideDuration={3000}>
+                            <Alert severity='error' sx={{ width: '100%' }}>
+                                Passwords are not the same
+                            </Alert>
+                        </Snackbar>
                         <TextField label="Email"
                                    id='email'
                                    variant="outlined"

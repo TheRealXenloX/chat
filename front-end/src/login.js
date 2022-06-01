@@ -3,19 +3,16 @@ import {TextField} from "@mui/material";
 import Button from "@mui/material/Button";
 import {useState} from "react";
 import './Styles/login.css'
-import {Link} from "react-router-dom";
 
 function Login() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loggedin, setLoggedin] = useState(false);
-    const [register, setRegister] = useState(false);
 
     const login = () => {
         if (username === "Jamy" && password === "yoman") {
             setLoggedin(true)
-
         } else {
             alert("wrong username of password!")
         }
