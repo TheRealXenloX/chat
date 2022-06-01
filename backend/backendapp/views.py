@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from backend.models import NewUser
-from backend.serializers import NewUserSerializer
+from backendapp.models import NewUser
+from backendapp.serializers import NewUserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
