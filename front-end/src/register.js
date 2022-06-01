@@ -64,7 +64,7 @@ function Register() {
                                    variant="outlined"
                                    size="small"
                                    style={{marginTop: 8 + 'px'}}
-                                   helperText="Set username for login"
+                                   helperText="Email"
                                    onChange={onChangeEmail}
                         />
                         <TextField label="Username"
@@ -90,10 +90,10 @@ function Register() {
                                    size="small"
                                    type='password'
                                    style={{marginTop: 8 + 'px'}}
-                                   helperText="Set password for login"
+                                   helperText="Repeat password"
                                    onChange={onChangeRepeatPass}
                         />
-                        <Button variant="contained" color="success" style={{marginTop: 8 + 'px'}}
+                        <Button variant="contained" color="success" id="registerButton" style={{marginTop: 8 + 'px'}}
                                 onClick={register}>Register</Button>
                     </form>
                 </div>

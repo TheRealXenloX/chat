@@ -58,7 +58,7 @@ function Login() {
                                    helperText="Set password for login"
                                    onChange={onChangePassword}
                         />
-                        <Button variant="contained" color="success" style={{marginTop: 8 + 'px'}}
+                        <Button variant="contained" color="success" id="loginButton" style={{marginTop: 8 + 'px'}}
                                 onClick={login}>Log in</Button>
                     </form>
                 </div>
