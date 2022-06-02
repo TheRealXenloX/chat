@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from backendapp.models import NewUser
+from backendapp.models import Users
 
 
-class NewUserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = NewUser
+        model = Users
         fields = "__all__"
