@@ -1,7 +1,8 @@
 from django.db import models
 
 
-class NewUser(models.Model):
+class User(models.Model):
+    id = models.IntegerField(unique=True)
     email = models.EmailField()
     username = models.TextField()
     password = models.TextField()
