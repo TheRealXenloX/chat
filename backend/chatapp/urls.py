@@ -1,4 +1,4 @@
-"""backendapp URL Configuration
+"""chatapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,12 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_framework import routers
-
-from backendapp.views import UserViewSet
-
-router = routers.DefaultRouter()
-router.register(r'', UserViewSet, basename='user')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
