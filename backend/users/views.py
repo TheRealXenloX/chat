@@ -11,8 +11,3 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = userSerializer
 
-    @action(methods=['GET'], detail=True, url_path='getuser')
-    def getUser(self, request, pk):
-        print(request.user)
-        # return Response(data=login(user, request))
-        return Response(data="joe")

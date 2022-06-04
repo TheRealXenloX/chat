@@ -4,9 +4,11 @@ import Button from "@mui/material/Button";
 import {useState} from "react";
 import './Styles/login.css'
 import axios from "axios";
-import {Redirect} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Login() {
+
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -31,6 +33,7 @@ function Login() {
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
+                navigate('/home', {replace:true})
             })
             .catch(function (error) {
                 console.log(error);
