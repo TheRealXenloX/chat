@@ -13,7 +13,6 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorState, setErrorState] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
 
     const login = () => {
         const data = new FormData()
@@ -33,13 +32,14 @@ function Login() {
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
-                navigate('/home', {replace:true})
+                navigate('/home', {replace: true})
+                for (let i in response) {
+                    sessionStorage.setItem(i, response[i])
+                }
+
             })
             .catch(function (error) {
-                console.log(error);
-                setErrorMessage(error)
                 setErrorState(true)
-                console.log(errorMessage)
             });
 
     }
@@ -62,10 +62,10 @@ function Login() {
                     <img src={Logo} alt="logo" className="login-Logo"/>
                 </div>
                 <div className='login-Form'>
-                    <Snackbar open={errorState} autoHideDuration={1500}
-                              style={{justifyContent: 'center', alignItems: 'center'}}>
-                        <Alert severity='error' sx={{width: '100%'}}>
-                            joe
+                    <Snackbar open={errorState} autoHideDuration={3000}
+                              onClose={() => setErrorState(false)}>
+                        <Alert severity='error' sx={{width: '75%'}}>
+                            Username or password not correct.
                         </Alert>
                     </Snackbar>
                     <form>
